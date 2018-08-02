@@ -1,6 +1,24 @@
 @import 'nav';
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
+@mixin flex-inline() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flex-inline2() {
+	display: flex;
+	justify-content: flex-start;
+}
+
+@mixin flex-column1() {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -20,33 +38,24 @@ main {
 .jumbotron {
 	height: 90vh;
 	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@include flex-inline();
 	background-color: #39c2db;
 	.hide-show {
 		height: 65%;
 		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include flex-inline();
 		background-color: #39c2db;
 	}
 	&__content {
 		height: 100%;
 		width: 100%;
-		display: flex;
-		justify-content: flex-start;
+		@include flex-inline2();
 		align-items: center;
 		.jumbContent {
 			height: 35%;
 			width: 45%;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-around;
-			align-items: flex-start;
 			margin: 0 4vw;
-			text-align: left;
+			@include flex-column1();
 			color: #fff;
 			&__header {
 				font-size: 5vh;
@@ -72,9 +81,7 @@ main {
 	min-height: 100vh;
 	width: 100%;
 	padding-top: 5vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@include flex-inline();
 	background-color: #fff;
 	&__img {
 		height: 60vh;
@@ -85,10 +92,7 @@ main {
 		min-height: 72vh;
 		width: 40%;
 		margin: 0 2vw;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		align-items: center;
+		@include flex-column1();
 		&--header {
 			font-size: 8vh;
 			text-align: center;
@@ -96,8 +100,8 @@ main {
 		&--text {
 			color: #8e8a8a;
 			font-size: 2.6vh;
-			text-align: left;
 			font-style: italic;
+			text-align: left;
 			word-spacing: 0.1vw;
 			letter-spacing: 0.2vw;
 		}
@@ -118,7 +122,7 @@ main {
 				div {
 					height: 2.5vh;
 					width: 100%;
-					border: 0.1vh solid #000;
+					border: 0.1vh solid #8e8a8a;
 				}
 				.gar-1 {
 					 background: linear-gradient(to right, red 50%, white 50%);
@@ -133,6 +137,98 @@ main {
 					 background: linear-gradient(to right, red 55%, white 45%);
 				}
 			}
+		}
+	}
+}
+
+.services {
+	height: 100vh;
+	width: 100%;
+	@include flex-inline2();
+	align-items: center;
+	background-color: #fff;
+	&__content {
+		height: 65%;
+		width: 50%;
+		margin-left: 10vw;
+		padding-left: 5vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		background-color: #bec1dd;
+		&--header {
+			height: 15%;
+			width: 60%;
+			@include flex-column1();
+			text-transform: capitalize;
+			p {
+				font-size: 3vh;
+			}
+			h2 {
+				font-size: 7vh;
+			}
+		}
+		&--text {
+			width: 60%;
+			margin: 7vh 0;
+			@include flex-inline2();
+			p {
+				color: #8e8a8a;
+				font-size: 2.5vh;
+				font-style: italic;
+				letter-spacing: 0.2vw;
+			}
+		}
+		&--btn {
+			min-width: 60%;
+			@include flex-inline2();
+			button {
+				min-height: 6vh;
+				min-width: 35%;
+				padding: 1vh 2.5vw;
+				background-color: #186ea0;
+				color: #fff;
+				font-size: 2.5vh;
+				text-transform: capitalize;
+				cursor: pointer;
+				border: none;
+				border-radius: 1vh;
+				transition: 0.3s ease-in-out;
+				&:hover {
+					opacity: 0.6;
+				}
+			}
+		}
+	}
+	&__items {
+		height: 60%;
+		width: 50%;
+		position: absolute;
+		left: 40%;
+		@include flex-inline();
+		flex-wrap: wrap;
+		&--content {
+			height: 40%;
+			width: 34%;
+			margin: 0 1vw;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: #F6F6F5;
+			i {
+				color: #ef944f;
+				font-size: 8vh;
+				text-align: center;
+			}
+			p {
+				padding: 1vh 2vw;
+				font-size: 2.5vh;
+				text-align: center;
+				letter-spacing: 0.2vw;
+			}
+
 		}
 	}
 }
@@ -161,6 +257,21 @@ main {
 		}	
 		&__content {
 			width: 70%;
+		}
+	}
+	.services {
+		position: relative;
+		flex-direction: column;
+		justify-content: center;
+		&__content {
+			width: 70%;
+			margin-left: 0;
+			align-items: center;
+		}
+		&__items {
+			width: 80%;
+			left: 10%;
+			top: 75%;
 		}
 	}
 }
@@ -196,6 +307,19 @@ main {
 			width: 90%;
 		}
 	}
+	.services {
+		&__content {
+			width: 85%;
+			margin-left: 0;
+			margin-top: 9vh;
+			align-items: center;
+		}
+		&__items {
+			width: 90%;
+			left: 4%;
+			top: 75%;
+		}
+	}
 }
 
 @media (max-width: 400px) {
@@ -207,6 +331,13 @@ main {
 			}
 			.jumbImg {
 				width: 75%;
+			}
+		}
+	}
+	.services {
+		&__items {
+			&--content {
+				width: 45%;
 			}
 		}
 	}
