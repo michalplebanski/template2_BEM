@@ -142,14 +142,14 @@ main {
 }
 
 .services {
-	height: 100vh;
+	height: 85vh;
 	width: 100%;
 	@include flex-inline2();
 	align-items: center;
 	background-color: #fff;
 	&__content {
-		height: 65%;
-		width: 50%;
+		height: 80%;
+		width: 55%;
 		margin-left: 10vw;
 		padding-left: 5vw;
 		display: flex;
@@ -233,6 +233,73 @@ main {
 	}
 }
 
+.team {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	&__header {
+		height: 15%;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		&--text {
+			font-size: 8vh;
+			letter-spacing: 0.1vw;
+			text-transform: capitalize;
+		}
+	}
+	&__info {
+		height: 70%;
+		width: 90%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+		&--item {
+			height: 100%;
+			width: 23%;
+			padding: 2vh 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			img {
+				height: 75%;
+				width: 100%;
+			}
+			p {
+				font-size: 4.5vh;
+				text-align: center;
+				letter-spacing: 0.1vw;
+			}
+			.team__social-media {
+				width: 60%;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				button {
+					height: 4vh;
+					min-width: 20%;
+					background-color: inherit;
+					color: #000;
+					font-size: 3vh;
+					cursor: pointer;
+					border: none;
+					transition: 0.3 ease-in-out;
+					&:hover {
+						opacity: 0.5;
+					}
+				}
+			}
+		}
+	}
+}
+
 @media (max-width: 750px) {
 	.jumbotron {
 		height: 75vh;
@@ -272,6 +339,13 @@ main {
 			width: 80%;
 			left: 10%;
 			top: 75%;
+		}
+	}
+	.team {
+		&__info {
+			&--item {
+				width: 40%;
+			}
 		}
 	}
 }
@@ -318,6 +392,13 @@ main {
 			width: 90%;
 			left: 4%;
 			top: 75%;
+		}
+	}
+	.team {
+		&__info {
+			&--item {
+				width: 60%;
+			}
 		}
 	}
 }
