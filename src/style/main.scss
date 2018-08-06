@@ -336,7 +336,49 @@ main {
 			margin: 2vh 1vw;
 		}
 	}
+}
 
+.gif {
+	position: relative;
+	min-height: 70vh;
+	width: 100%;
+	margin: 7vh 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	&__img {
+		position: absolute;
+		min-height: 70vh;
+		width: 100%;
+		background-image: url('https://media0.giphy.com/media/3o8doTcGqhxe3E5zmE/giphy.gif');
+		background-attachment: fixed;
+		background-size: cover;
+		background-position: center;
+		filter: brightness(50%);
+	}
+	&__header {
+		min-height: 24vh;
+		width: 80%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		text-align: center;
+		color: #fff;
+		&--title {
+			font-size: 5vh;
+			letter-spacing: 0.2vw;
+			word-spacing: 0.1vw;
+			text-transform: capitalize;
+			filter: brightness(200%);
+		}
+		&--text {
+			font-size: 3vh;
+			letter-spacing: 0.15vw;
+			filter: brightness(200%);
+		}
+	}
 }
 
 @media (max-width: 750px) {
@@ -404,6 +446,12 @@ main {
 			&--item {
 				width: 40%;
 			}
+		}
+	}
+	.gif {
+		&__header {
+			min-height: 30vh;
+			width: 94%;
 		}
 	}
 }
@@ -479,6 +527,11 @@ main {
 			&--content {
 				width: 45%;
 			}
+		}
+	}
+	.gif {
+		&__header {
+			min-height: 40vh;
 		}
 	}
 }
