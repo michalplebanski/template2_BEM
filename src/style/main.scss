@@ -19,6 +19,14 @@
 	align-items: flex-start;
 }
 
+@mixin inputs() {
+	width: 80%;
+	padding: 0 1vw;
+	background-color: inherit;
+	font-size: 3vh;
+	border: 0.1vh solid #000;
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -381,6 +389,96 @@ main {
 	}
 }
 
+.contact {
+	min-height: 90vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	&__info {
+		height: 80vh;
+		width: 45%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		&--title {
+			font-size: 7vh;
+			text-align: center;
+			text-transform: capitalize;
+		}
+		&--text {
+			margin: 2vh 0;
+			color: #999;
+			font-size: 2.5vh;
+			font-style: italic;
+			text-align: left;
+			line-height: 4vh;
+			word-spacing: 0.2vw;
+			letter-spacing: 0.2vw;
+		}
+		&--items {
+			height: 20vh;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: flex-start;
+			.contact-item {
+				width: 90%;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				text-align: left;
+				i {
+					padding-right: 2vw;
+					font-size: 3vh;
+				}
+				p {
+					font-size: 2.5vh;
+				} 
+			}
+		}
+	}
+	&__input {
+		min-height: 60vh;
+		width: 45%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		&--name {
+			height: 7vh;
+			@include inputs();
+		}
+		&--email {
+			height: 7vh;
+			@include inputs();
+		}
+		&--text {
+			@include inputs();
+			padding: 2vh 1vw;
+		}
+		&--btn {
+			min-height: 6.5vh;
+			min-width: 45%;
+			padding: 1vh 2vw;
+			background-color: inherit;
+			font-size: 2.5vh;
+			cursor: pointer;
+			word-spacing: 0.2vw;
+			letter-spacing: 0.2vw;
+			text-transform: uppercase;
+			border: 0.3vh solid #000;
+			transition: 0.2s ease-in-out;
+			&:hover {
+				border: 0.3vh solid #7d86db;
+			}
+		}
+	}
+}
+
 @media (max-width: 750px) {
 	.jumbotron {
 		height: 75vh;
@@ -454,6 +552,27 @@ main {
 			width: 94%;
 		}
 	}
+	.contact {
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		&__info {
+			height: 50vh;
+			width: 80%;
+			&--text {
+				text-align: center;
+			}
+			&--items {
+				.contact-item {
+					justify-content: center;
+				}
+			}
+		}
+		&__input {
+			height: 60vh;
+			width: 80%;
+		}
+	}
 }
 
 @media (max-width: 500px) {
@@ -505,6 +624,11 @@ main {
 			&--item {
 				width: 60%;
 			}
+		}
+	}
+	.contact {
+		&__input {
+			width: 94%;
 		}
 	}
 }
