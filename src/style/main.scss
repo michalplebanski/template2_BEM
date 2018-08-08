@@ -220,10 +220,8 @@ main {
 			height: 40%;
 			width: 34%;
 			margin: 0 1vw;
-			display: flex;
+			@include flex-inline();
 			flex-direction: column;
-			justify-content: center;
-			align-items: center;
 			background-color: #F6F6F5;
 			i {
 				color: #ef944f;
@@ -244,17 +242,13 @@ main {
 .team {
 	min-height: 100vh;
 	width: 100%;
-	display: flex;
+	@include flex-inline();
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	background-color: #fff;
 	&__header {
 		min-height: 20vh;
 		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include flex-inline();
 		&--text {
 			font-size: 8vh;
 			text-align: center;
@@ -313,10 +307,8 @@ main {
 .gallery {
 	min-height: 100vh;
 	width: 100%;
-	display: flex;
+	@include flex-inline();
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	background-color: #fff;
 	&__header {
 		height: 15vh;
@@ -351,10 +343,8 @@ main {
 	min-height: 70vh;
 	width: 100%;
 	margin: 7vh 0;
-	display: flex;
+	@include flex-inline();
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	&__img {
 		position: absolute;
 		min-height: 70vh;
@@ -372,8 +362,8 @@ main {
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: center;
-		text-align: center;
 		color: #fff;
+		text-align: center;
 		&--title {
 			font-size: 5vh;
 			letter-spacing: 0.2vw;
@@ -392,17 +382,12 @@ main {
 .contact {
 	min-height: 90vh;
 	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@include flex-inline();
 	background-color: #fff;
 	&__info {
 		height: 80vh;
 		width: 45%;
-		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		align-items: center;
 		&--title {
 			font-size: 7vh;
 			text-align: center;
@@ -474,6 +459,101 @@ main {
 			transition: 0.2s ease-in-out;
 			&:hover {
 				border: 0.3vh solid #7d86db;
+			}
+		}
+	}
+}
+
+.footer {
+	min-height: 60vh;
+	width: 100%;
+	@include flex-inline();
+	background-color: #4b89bc;
+	color: #fff;
+	&__info {
+		min-height: 45vh;
+		width: 45%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+		&--text {
+			height: 20vh;
+			width: 40%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			h2 {
+				font-size: 4.5vh;
+			}
+			p {
+				font-size: 2.5vh;
+				letter-spacing: 0.1vw;
+				text-transform: capitalize;
+			}
+			.footer-item {
+				width: 100%;
+				@include flex-inline();
+				i {
+					padding-right: 1vw;
+					color: #fff;
+					font-size: 2vh;
+				}
+			}
+		}
+	}
+	&__subscribe {
+		min-height: 45vh;
+		width: 45%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		&--title {
+			width: 80%;
+			font-size: 4.5vh;
+			text-transform: capitalize;
+		}
+		&--name {
+			min-height: 7vh;
+			width: 80%;
+			padding: 1vh 1vw;
+			background-color: inherit;
+			color: #fff;
+			font-size: 3vh;
+			border: none;
+			border-bottom: 0.2vh solid #fff;
+		}
+		&--email {
+			min-height: 7vh;
+			width: 80%;
+			padding: 1vh 1vw;
+			background-color: inherit;
+			color: #fff;
+			font-size: 3vh;
+			border: none;
+			border-bottom: 0.2vh solid #fff;
+		}
+		::placeholder {
+			color: #fff;
+		}
+		&--btn {
+			min-height: 6vh;
+			min-width: 7.5vw;
+			padding: 1vh 2vw;
+			background-color: #2f3caa;
+			color: #fff;
+			font-size: 2.5vh;
+			cursor: pointer;
+			text-transform: uppercase;
+			letter-spacing: 0.1vw;
+			border: 0.3vh solid #fff;
+			transition: 0.3s ease-in-out;
+			&:hover {
+				background-color: #fff;
+				color: #2f3caa;
+				border: 0.3vh solid #fff;
 			}
 		}
 	}
@@ -571,6 +651,20 @@ main {
 		&__input {
 			height: 60vh;
 			width: 80%;
+		}
+	}
+	.footer {
+		flex-direction: column;
+		justify-content: space-around;
+		&__info {
+			width: 80%;
+			margin: 5vh 0;
+		}
+		&__subscribe {
+			width: 80%;
+			&--title {
+				text-align: center;
+			}
 		}
 	}
 }
